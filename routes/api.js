@@ -143,7 +143,7 @@ router.get('/nsfw/bokep', async (req, res, next) => {
       encoding: null
    };
    request(requestSettings, function(error, response, body) {
-      res.set('Content-Type', 'image/png');
+      res.set('Content-Type', 'video/mp4');
       res.send(body);
    });
 } else {
