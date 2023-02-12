@@ -135,7 +135,7 @@ router.get('/nsfw/bokep', async (req, res, next) => {
           var apikey = req.query.apikey
        	if(!apikey) return res.json(loghandler.noapikey)
         if(listkey.includes(apikey)){
-         var data =["https://telegra.ph/file/b6dbd0067c09f68152756.mp4","https://telegra.ph/file/445b41fcf6b8305f2a25a.mp4"]
+         var data =["https://telegra.ph/file/b6dbd0067c09f68152756.mp4","https://telegra.ph/file/445b41fcf6b8305f2a25a.mp4","https://telegra.ph/file/d57602b0037e0f728ee6f.mp4","https://telegra.ph/file/1a925d1a014235ccc81bf.mp4","https://telegra.ph/file/0fc1b7d8eafd2920aec3f.mp4","https://cdn.discordapp.com/attachments/1049935436623134722/1061816467961679872/7e72492674b4eac4f77741b4846a2db6.mp4","https://cdn.discordapp.com/attachments/1014945147483603025/1046952827706155019/It2KvAnduhM8vsAs-2.mp4"]
          var result = data[Math.floor(Math.random() * data.length)];
          var requestSettings = {
       url: result,
