@@ -694,6 +694,34 @@ var requestSettings = {
   res.json(loghandler.apikey)
 }
 })
+
+router.get('/nsfw/yuri', async (req, res, next) => {
+          var apikey = req.query.apikey
+       	var text = req.query.page
+       	if(!apikey) return res.json(loghandler.noapikey)
+        if(listkey.includes(apikey)){
+       fetch(encodeURI(`https://github.com/danzzcoding/data-danzzapi.xyz/blob/main/nsfw/yuri.json`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+        var result = data[Math.floor(Math.random() * data.length)];
+var requestSettings = {
+      url: result.url,
+      method: 'GET',
+      encoding: null
+   };
+   request(requestSettings, function(error, response, body) {
+      res.set('Content-Type', 'image/png');
+      res.send(body);
+   });
+   })
+} else {
+  res.json(loghandler.apikey)
+}
+})
+
+
+
 router.get('/nsfw/ahegao', async (req, res, next) => {
           var apikey = req.query.apikey
        	var text = req.query.page
