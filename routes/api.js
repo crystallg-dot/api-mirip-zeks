@@ -246,6 +246,25 @@ router.get('/cecan/malaysia', async (req, res, next) => {
   res.json(loghandler.apikey)
 }
 })
+router.get('/nsfw/hentaivid', async (req, res, next) => {
+          var apikey = req.query.apikey
+       	if(!apikey) return res.json(loghandler.noapikey)
+        if(listkey.includes(apikey)){
+	 var data = [""]
+	 var result = data[Math.floor(Math.random() * data.length)];
+         var requestSettings = {
+      url: result,
+      method: 'GET',
+      encoding: null
+   };
+   request(requestSettings, function(error, response, body) {
+      res.set('Content-Type', 'video/mp4');
+      res.send(body);
+   });
+} else {
+  res.json(loghandler.apikey)
+}
+})
 
 //downloader
 router.get('/download/facebook', async (req, res, next) => {
